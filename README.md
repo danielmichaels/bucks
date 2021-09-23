@@ -1,5 +1,5 @@
 
-# Bucks
+# 💵 Bucks 💵
 
 A simple commandline currency converter written in Go.
 
