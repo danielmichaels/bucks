@@ -1,0 +1,8 @@
+# supported API services
+providers:
+  currencyconverterapi:
+    # API key from provider, empty means it will not be used even in fallback
+    key: ""
+    # set to true if this should be the preferred API.
+    default: false
+
