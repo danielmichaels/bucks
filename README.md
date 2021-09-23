@@ -5,8 +5,7 @@ A simple commandline currency converter written in Go.
 
 ## Demo
 
-Insert gif or link to demo
-
+![](docs/bucks-demo.gif)
   
 ## Documentation
 
