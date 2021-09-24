@@ -7,22 +7,26 @@ A simple commandline currency converter written in Go.
 
 ![](docs/bucks-demo.gif)
   
-## Documentation
-
-[Documentation](https://bucks.docs.danielms.site)
-
-  
 ## Features
 
 - Convert currencies easily
 - Powered by third party APIs
-- Super fast!
-
   
+### Limitations 
+
+- it can only convert one currency at a time.
+- only supports [CurrencyConvertApi](https://free.currencyconverterapi.com/)
 ## Installation
 
 `bucks` requires the use of a configuration file. The standard location for this file is
 `$HOME/.bucks.yaml` and is a `yaml` file.
+
+Sign up for a free API key [here](https://free.currencyconverterapi.com/free-api-key). It takes 
+two minutes. Then enter the key into the `key` field within `$HOME/.bucks.yaml`. 
+
+You can copy the example `yaml` file found at the top level of this repo to your `$HOME` by running:
+
+`mv bucks.example.yaml $HOME/.bucks.yaml`
 
 ```yaml
 # bucks example configuration yaml
@@ -35,30 +39,27 @@ providers:
 ```
 If `bucks` does not find this file it will fail to run. 
 
+To get `bucks` running on your devie (I've only tested linux but mac and WSL should work too).
 ```bash
-# todo
-#docker run -it --rm danielmichaels/bucks:latest <int> <currency> <currency>
+git clone https://github.com/danielmichaels/bucks
+cd bucks
+go install
 ```
 
-```bash
-go get github.com/danielmichaels/bucks
-```
+**Note:** Better install/setup methods are a work in progress.
+
 ## Usage/Examples
 
-The prefered option is to run as container.
-
-```shell
-docker run -it --rm danielmichaels/bucks:latest 100 usd eur
-# you can alias this command for more brevity
-```
-
-`bucks` can also be run as a binary when installed from github. See [Installation](#installation) for more details.
-
+After cloning the repo and running `go install`, `bucks` will available as an executable. Run it 
+like so.
 
 ```shell
 bucks 100 usd eur
 ```
 
+The arguments read like this:
+
+"I want to convert 100 USD into EUR" or "What is 100 AUD worth in USD".
   
 ## License
 
@@ -68,22 +69,10 @@ bucks 100 usd eur
 
 Here are some related projects
 
-
-  
-## Running Tests
-
-To run tests, run the following command
-# todo
-```bash
-go test
-```
-
+- [cash-cli](https://github.com/xxczaki/cash-cli) written in Node
+- [gocash](https://github.com/basebandit/gocash) another Go currency converter
   
 ## Contributing
 
 Contributions are always welcome!
-
-See `contributing.md` for ways to get started.
-
-Please adhere to this project's `code of conduct`.
 
